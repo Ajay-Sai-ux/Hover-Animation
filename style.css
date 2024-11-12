@@ -1,0 +1,35 @@
+/* Set the body and html to take up full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: black;
+}
+
+/* Set the grid container to take full height of the viewport */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Auto-fill columns, each at least 200px wide */
+  grid-template-rows: auto; /* Rows will adjust based on content */
+  /* height: 100vh; Full height of the viewport */
+  gap: 20px; /* Gap between images */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Make images responsive inside the grid cells */
+.image-grid img {
+  width: 100%; /* Ensure the image stretches to the width of the cell */
+  height: 100%; /* Ensure the image stretches to the height of the cell */
+  object-fit: cover; /* Maintain aspect ratio and fill the space */
+  opacity: 0;
+  
+}
+
+.image-grid :hover {
+  opacity: 1;
+}
+
+.image-grid :not(:hover){
+  opacity: 0;
+  transition: opacity 1s ease;
+}
